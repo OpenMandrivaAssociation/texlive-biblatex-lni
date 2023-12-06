@@ -1,6 +1,6 @@
 Name:		texlive-biblatex-lni
-Version:	61719
-Release:	2
+Version:	68755
+Release:	1
 Summary:	LNI style for BibLaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-lni
