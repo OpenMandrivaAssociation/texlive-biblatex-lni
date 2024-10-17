@@ -3,7 +3,7 @@ Version:	68755
 Release:	1
 Summary:	LNI style for BibLaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-lni
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-lni
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-lni.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-lni.doc.r%{version}.tar.xz
