@@ -1,36 +1,23 @@
-Name:		texlive-biblatex-lni
-Version:	68755
-Release:	1
+%global tl_name biblatex-lni
+%global tl_revision 73625
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.7
+Release:	%{tl_revision}.1
 Summary:	LNI style for BibLaTeX
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-lni
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-contrib/biblatex-lni
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-lni.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-lni.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-lni.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-lni.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-BibLaTeX style for the Lecture Notes in Informatics, which is
-published by the Gesellschaft fur Informatik (GI e.V.).
+BibLaTeX style for the Lecture Notes in Informatics, which is published
+by the Gesellschaft fur Informatik (GI e.V.).
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/biblatex-lni
-%doc %{_texmfdistdir}/doc/latex/biblatex-lni
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
